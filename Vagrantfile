@@ -4,12 +4,14 @@ Vagrant.configure("2") do |config|
     iis01.vm.box_check_update = false
     iis01.vm.network "private_network", ip: "192.168.33.10"
     iis01.vm.provision :shell, inline: "Add-WindowsFeature Web-Server"
+    iis01.vm.provision :shell, inline: "'<font color=\"blue\">WebServer iis01<font>' > $env:SystemDrive\\inetpub\\wwwroot\\index.html"
   end
   config.vm.define "iis02" do |iis02|
     iis02.vm.box = "davydany/Windows2016"
     iis02.vm.box_check_update = false
     iis02.vm.network "private_network", ip: "192.168.33.11"
     iis02.vm.provision :shell, inline: "Add-WindowsFeature Web-Server"
+    iis02.vm.provision :shell, inline: "'<font color=\"green\">WebServer iis02<font>' > $env:SystemDrive\\inetpub\\wwwroot\\index.html"
   end
   config.vm.define "lb" do |lb|
     lb.vm.box = "ubuntu/trusty64"
@@ -23,5 +25,3 @@ Vagrant.configure("2") do |config|
     lb.vm.provision :shell, inline: "sudo service nginx reload"
   end
 end
-
-# https://vegibit.com/how-to-provision-nginx-using-vagrant/
