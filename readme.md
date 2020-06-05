@@ -1,12 +1,13 @@
 # IIS Web Server clustered
 
-----
+## Description
 
+This project uses **vagrant** and **virtualbox** to create 2 virtual machines running **windows 2016** (web servers) and 1 virtual machine running **Ubuntu** (load balancer).
 
 ## Pre-requisites:
 - Virtualbox
 - Vagrant
-  - Vagrant boxes "davydany/Windows2016" and "ubuntu/trusty64" (downloaded during project execution)
+  - Vagrant boxes *"davydany/Windows2016"* and *"ubuntu/trusty64"* (downloaded during project execution)
 
 ## How to execute this project:
 
