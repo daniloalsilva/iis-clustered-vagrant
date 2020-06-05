@@ -20,4 +20,5 @@ git clone https://github.com/daniloalsilva/iis-clustered-vagrant.git
 cd iis-clustered-vagrant
 vagrant up
 ```
+- You can access the website locally, using the address http://192.168.33.12 (lb ip), which will show the contents of iis web servers, using round robin load balancing distribution.
 - If you want to shutdown or destroy the created environment, just run `vagrant halt` or `vagrant destroy` respectively.
